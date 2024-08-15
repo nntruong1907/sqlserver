@@ -172,79 +172,243 @@ FROM [dbo].[Orders] AS [o];
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="min-max">Min Max</a>
+<div style="margin-left: 2em;">
+
+
+* Viết câu lệnh SQL tìm giá thấp nhất của các sẩn phẩm trong bảng Products.
+```
+SELECT MIN([UnitPrice]) AS [MinPrice]
+FROM [dbo].[Products];
+```
+* Viết câu lệnh lấy ra ngày đặt hàng gần đây nhất từ bảng Orders.
+```
+SELECT MAX([OrderDate]) AS [MaxOrderDate]
+FROM [dbo].[Orders];
+```
+
+* Viết câu lệnh SQL tìm số lượng hàng trong kho (UnitsInStock) lớn nhất.
+```
+SELECT MAX([UnitsInStock]) AS [MaxUnitsInStock]
+FROM [dbo].[Products];
+```
+</div>
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="count-sum-avg">Count-Sum-AVG</a>
+<div style="margin-left: 2em;">
+
+
+</div>
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="order-by">ORDER BY</a>
+<div style="margin-left: 2em;">
+
+
+</div>
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="math-operations">Math Operations</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="where">Where</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="and-or-not">And-Or-Not</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="between">Between</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="like">LIKE</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="wildcard">Wildcard</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="in-not-in">IN-NOT IN</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="is-null-is-not-null">IS NULL - IS NOT NULL</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="group-by">GROUP BY</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="day-month-year">Day-Month-Year</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="having">HAVING</a></li><p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="where">Where</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="and-or-not">And-Or-Not</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="between">Between</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="like">LIKE</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="wildcard">Wildcard</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="in-not-in">IN-NOT IN</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="is-null-is-not-null">IS NULL - IS NOT NULL</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="group-by">GROUP BY</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="day-month-year">Day-Month-Year</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="having">HAVING</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="query-data-from-multiple-tables">Query data from multiple tables</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="union">Union</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="join">JOIN - LEFT JOIN - RIGHT JOIN - FULL JOIN</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="sub-query">Sub query</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="sql-statement-execution-order">SQL statement execution order</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="common-table-expression">Common Table Expression</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="recursive-query">Recursive query</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="windows-functions">Windows Functions</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="create-database">Create Database</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="create-table">Create Table</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="insert">INSERT</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="select-into">SELECT INTO</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="delete">DELETE</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="update">UPDATE</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="create-index">Create Index</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="view">View</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="stored-procedures">Stored Procedures</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="trigger">Trigger</a>
+<div style="margin-left: 2em;">
+
+
+</div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
 </ol> 
