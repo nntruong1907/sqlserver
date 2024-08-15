@@ -104,17 +104,17 @@ FROM [dbo].[Customers];
 
 
 * Viết câu lệnh SQL lấy ra tên các quốc gia (Country) khác nhau từ bảng  Customers
-```
+```sh
 SELECT DISTINCT [Country] 
 FROM [dbo].[Customers];
 ```
 * Viết câu lệnh SQL lấy ra tên các mã số bưu điện (PostalCode) khác nhau từ bảng Nhà cung cấp - Suppliers
-```
+```sh
 SELECT DISTINCT PostalCode 
 FROM Suppliers;
 ```
 * Viết câu lệnh SQL lấy ra các dữ liệu khác nhau về họ của nhân viên (LastName) và cách gọi danh hiệu lịch sự (TitleOfCourtesy) của nhân viên từ bảng Employees
-```
+```sh
 SELECT DISTINCT [LastName], [TitleOfCourtesy]
 FROM [dbo].[Employees];
 
@@ -127,19 +127,19 @@ FROM [dbo].[Employees];
 
 
 * Viết câu lệnh SQL lấy ra 05 dòng đầu tiên trong bảng Customers.
-```
+```sh
 SELECT TOP 5 *
 FROM [dbo].[Customers];
 ```
 
 * Viết câu lệnh SQL lấy ra 30% nhân viên của công ty hiện tại.
-```
+```sh
 SELECT TOP 30 PERCENT *
 FROM [dbo].[Employees];
 ```
 
 * Viết câu lệnh SQL lấy ra các mã khách hàng trong bảng đơn hàng với quy định là mã khách hàng không được trùng lặp, chỉ lấy 5 dòng dữ liệu đầu tiên.
-```
+```sh
 SELECT DISTINCT TOP 5 [CustomerID]
 FROM [dbo].[Orders];
 ```
@@ -151,19 +151,19 @@ FROM [dbo].[Orders];
 <div style="margin-left: 2em;">
 
 * Viết câu lệnh SQL lấy “CompanyName” và đặt tên thay thế là “Công ty”; “PostalCode” và đặt tên thay thế là “Mã bưu điện”
-```
+```sh
 SELECT	[CompanyName] AS [Tên công ty],
 		[PostalCode] AS "Mã bưu điện",
 		[City] "Thành phố"
 FROM [dbo].[Customers];
 ```
 * Viết câu lệnh ra “LastName” và đặt tên thay thế là “Họ”; “FirstName” và đặt tên thay thế là “Tên”
-```
+```sh
 SELECT [LastName] AS [Họ và chữ lót],  [FirstName] AS [Tên]
 FROM [dbo].[Employees];
 ```
 * Viết câu lệnh SQL lấy ra 15 dòng đầu tiên tất cả các cột trong bảng Orders, đặt tên thay thế cho bảng Orders là “o”
-```
+```sh
 SELECT TOP 15 [o].*
 FROM [dbo].[Orders] AS [o];
 ```
@@ -175,18 +175,18 @@ FROM [dbo].[Orders] AS [o];
 
 
 * Viết câu lệnh SQL tìm giá thấp nhất của các sẩn phẩm trong bảng Products.
-```
+```sh
 SELECT MIN([UnitPrice]) AS [MinPrice]
 FROM [dbo].[Products];
 ```
 * Viết câu lệnh lấy ra ngày đặt hàng gần đây nhất từ bảng Orders.
-```
+```sh
 SELECT MAX([OrderDate]) AS [MaxOrderDate]
 FROM [dbo].[Orders];
 ```
 
 * Viết câu lệnh SQL tìm số lượng hàng trong kho (UnitsInStock) lớn nhất.
-```
+```sh
 SELECT MAX([UnitsInStock]) AS [MaxUnitsInStock]
 FROM [dbo].[Products];
 ```
@@ -197,7 +197,7 @@ FROM [dbo].[Products];
 <div style="margin-left: 2em;">
 
 * Hãy đếm số lượng khách hàng có trong bảng (Customers).
-```
+```sh
 SELECT COUNT(*) AS [NumberOfCustomers]
 FROM [dbo].[Customers];
 
@@ -205,17 +205,17 @@ SELECT COUNT([CustomerID]) AS [NumberOfCustomers]
 FROM [dbo].[Customers];
 ```
 * Tính tổng số tiền vận chuyển (Freight) của tất cả các đơn đặt hàng.
-```
+```sh
 SELECT SUM([Freight]) AS [SumFreight]
 FROM [dbo].[Orders];
 ```
 * Tính trung bình số lượng đặt hàng (Quantity) của tất cả các sản phẩm trong bảng [Order Details]
-```
+```sh
 SELECT AVG([Quantity]) AS [AvgQuantity]
 FROM [dbo].[Order Details];
 ```
 * Đếm số lượng, tính tổng số lượng hàng trong kho và trung bình giá của các sản phẩm có trong bảng Product.
-```
+```sh
 SELECT	COUNT(*) AS [NumberOfProducts], 
 		SUM([UnitsInStock]) AS [TotalUnitsInStock], 
 		AVG([UnitPrice]) AS [AvgUnitPrice]
@@ -228,7 +228,7 @@ FROM [dbo].[Products];
 <div style="margin-left: 2em;">
 
 * Bạn hãy liệt kê tất cả các nhà cung cấp theo thứ tự tên đơn vị CompanyName Từ A-Z
-```
+```sh
 SELECT *
 FROM [dbo].[Suppliers]
 ORDER BY [CompanyName] ASC; -- ascending
@@ -238,13 +238,13 @@ FROM [dbo].[Suppliers]
 ORDER BY [CompanyName];
 ```
 * Bạn hãy liệt kê tất cả các sản phẩm theo thứ tự giá giảm dần.
-```
+```sh
 SELECT *
 FROM [dbo].[Products]
 ORDER BY [UnitPrice] DESC; -- descending
 ```
 * Bạn hãy liệt kê tất cả các nhân viên theo thứ tự họ và tên đệm A-Z. Không dùng ASC | DESC
-```
+```sh
 SELECT *
 FROM [dbo].[Employees]
 ORDER BY [LastName] ASC, [FirstName] ASC;
@@ -254,7 +254,7 @@ FROM [dbo].[Employees]
 ORDER BY [LastName], [FirstName];
 ```
 * Hãy lấy ra một sản phẩm có số lượng bán cao nhất từ bảng [Order Details]. Không được dùng MAX.
-```
+```sh
 SELECT *
 FROM [dbo].[Order Details]
 ORDER BY [Quantity] DESC;
@@ -271,7 +271,7 @@ ORDER BY [Quantity] DESC;
 <div style="margin-left: 2em;">
 
 * Tính số lượng sản phẩm còn lại trong kho (UnitsInStock) sau khi bán hết các sản phẩm đã được đặt hàng (UnitsOnOrder). StockRemaining = UnitsInStock - UnitsOnOrder
-```
+```sh
 SELECT	[ProductID], 
 		[ProductName], 
 		[UnitsInStock],
@@ -281,14 +281,14 @@ FROM [dbo].[Products];
 ```
 * Tính giá trị đơn hàng chi tiết cho tất cả các sản phẩm trong bảng OrderDetails
  OrderDetailValue = UnitPrice x Quantity
-```
+```sh
 SELECT	*,
 		([UnitPrice]*[Quantity]) AS [OrderDetailValue]
 FROM [dbo].[Order Details];
 ```
 
 * Tính tỷ lệ giá vận chuyển đơn đặt hàng (Freight) trung bình của các đơn hàng trong bảng Orders so với giá trị vận chuyển của đơn hàng lớn nhất (MaxFreight). FreightRatio = AVG(Freight)/ MAX(Freight) 
-```
+```sh
 SELECT  AVG([Freight])/MAX([Freight]) AS [FreightRatio]
 FROM [dbo].[Orders]
 ```
@@ -299,20 +299,20 @@ FROM [dbo].[Orders]
 <div style="margin-left: 2em;">
 
 * Bạn hãy liệt kê tất cả các nhân viên đến từ thành phố London.
-```
+```sh
 SELECT *
 FROM [dbo].[Employees]
 WHERE [City]='London';
 ```
 * Bạn hãy liệt kê tất cả các nhân viên đến từ thành phố London. Sap xep ket qua theo LastName A->Z
-```
+```sh
 SELECT *
 FROM [dbo].[Employees]
 WHERE [City]='London'
 ORDER BY [LastName] ASC;
 ```
 * Bạn hãy liệt kê tất các đơn hàng bị giao muộn, biết rằng ngày cần phải giao hàng là RequiredDate, ngày giao hàng thực tế là ShippedDate.
-```
+```sh
 SELECT [OrderID], [RequiredDate], [ShippedDate]
 FROM [dbo].[Orders]
 WHERE [ShippedDate]>[RequiredDate];
@@ -323,7 +323,7 @@ FROM [dbo].[Orders]
 WHERE [ShippedDate]>[RequiredDate];
 ```
 * Lấy ra tất cả các đơn hàng chi tiết được giảm giá nhiều hơn 10%. (Discount > 0.1)
-```
+```sh
 SELECT * 
 FROM [dbo].[Order Details]
 WHERE [Discount]>0.1;
@@ -335,19 +335,19 @@ WHERE [Discount]>0.1;
 <div style="margin-left: 2em;">
 
 * Bạn hãy liệt kê tất cả các sản phẩm có số lượng trong kho (UnitsInStock) nhỏ hơn 50 hoặc lớn hơn 100.
-```
+```sh
 SELECT *
 FROM [dbo].[Products]
 WHERE [UnitsInStock]<50 OR [UnitsInStock]>100;
 ```
 * Bạn hãy liệt kê tất các đơn hàng được giao đến Brazil, đã bị giao muộn, biết rằng ngày cần phải giao hàng là RequiredDate, ngày giao hàng thực tế là ShippedDate.
-```
+```sh
 SELECT *
 FROM [dbo].[Orders]
 WHERE [ShipCountry]='Brazil' AND [RequiredDate]<[ShippedDate];
 ```
 * Lấy ra tất cả các sản phẩm có giá dưới 100$ và mã thể loại khác 1. Lưu ý: dùng NOT
-```
+```sh
 SELECT *
 FROM [dbo].[Products]
 WHERE [UnitPrice]>=100 OR [CategoryID]=1;
@@ -363,7 +363,7 @@ WHERE NOT([UnitPrice]>=100 OR [CategoryID]=1);
 <div style="margin-left: 2em;">
 
 * Lấy danh sách các sản phẩm có giá bán trong khoảng từ 10 đến 20 đô la.
-```
+```sh
 SELECT *
 FROM [dbo].[Products]
 WHERE [UnitPrice] BETWEEN 10 AND 20;
@@ -373,13 +373,13 @@ FROM [dbo].[Products]
 WHERE [UnitPrice]>=10 AND [UnitPrice]<=20;
 ```
 * Lấy danh sách các đơn đặt hàng được đặt trong khoảng thời gian từ ngày 1996-07-01 đến ngày 1996-07-31:
-```
+```sh
 SELECT *
 FROM [dbo].[Orders]
 WHERE [OrderDate] BETWEEN '1996-07-01' AND '1996-07-31';
 ```
 * Tính tổng số tiền vận chuyển (Freight) của các đơn đặt hàng được đặt trong khoảng thời gian từ ngày 1996-07-01 đến ngày 1996-07-31:
-```
+```sh
 SELECT SUM([Freight]) AS [TotalJulyFreight]
 FROM [dbo].[Orders]
 WHERE [OrderDate] BETWEEN '1996-07-01' AND '1996-07-31';
@@ -391,21 +391,22 @@ WHERE [OrderDate] BETWEEN '1996-07-01' AND '1996-07-31';
 <div style="margin-left: 2em;">
 
 * Hãy lọc ra tất cả các khách hàng đến từ các quốc gia (Country) bắt đầu bằng chữ ‘A’
-```
+```sh
 SELECT *
 FROM [dbo].[Customers]
 WHERE [Country] LIKE 'A%';
 ```
 * Lấy danh sách các đơn đặt được gửi đến các thành phố có chứa chữ ‘a’.
 
-```SELECT *
+```sh
+SELECT *
 FROM [dbo].[Orders]
 WHERE [ShipCity] LIKE '%a%';
 ```
 * Hãy lọc ra tất cả các đơn hàng với điều kiện:<br>
     ShipCountry  LIKE ‘U_’<br>
     ShipCountry LIKE ‘U%’
-```
+```sh
 SELECT *
 FROM [dbo].[Orders]
 WHERE [ShipCountry] LIKE 'U_';
@@ -421,31 +422,31 @@ WHERE [ShipCountry] LIKE 'U%';
 <div style="margin-left: 2em;">
 
 * Hãy lọc ra tất cả các khách hàng có tên liên hệ bắt đầu bằng chữ ‘A’
-```
+```sh
 SELECT *
 FROM [dbo].[Customers]
 WHERE [ContactName] LIKE 'A%';
 ```
 * Hãy lọc ra tất cả các khách hàng có tên liên hệ bắt đầu bằng chữ ‘H’, và có chữ thứ 2 là bất kỳ ký tự nào.
-```
+```sh
 SELECT *
 FROM [dbo].[Customers]
 WHERE [ContactName] LIKE 'H_%';
 ```
 * Hãy lọc ra tất cả các đơn hàng được gửi đến thành phố có chữ cái bắt đầu là L, chữ cái thứ hai là u hoặc o.
-```
+```sh
 SELECT [OrderID], [ShipCity]
 FROM [dbo].[Orders]
 WHERE [ShipCity] LIKE 'L[u,o]%';
 ```
 * Hãy lọc ra tất cả các đơn hàng được gửi đến thành phố có chữ cái bắt đầu là L, chữ cái thứ hai khong là u hoặc o.
-```
+```sh
 SELECT [OrderID], [ShipCity]
 FROM [dbo].[Orders]
 WHERE [ShipCity] LIKE 'L[^u,o]%';
 ```
 * Hãy lọc ra tất cả các đơn hang được gửi đến thành phố có chữ cái bắt đầu là L, chữ cái thứ hai là các ký tự từ a đến e.
-```
+```sh
 SELECT [OrderID], [ShipCity]
 FROM [dbo].[Orders]
 WHERE [ShipCity] LIKE 'L[a-e]%';
@@ -459,7 +460,7 @@ WHERE [ShipCity] LIKE 'L[a-e]%';
 * Hãy lọc ra tất cả các đơn hàng với điều kiện:
 
 --a, Đơn hàng được giao đến Germany, UK, Brazil
-```
+```sh
 SELECT *
 FROM [dbo].[Orders]
 WHERE [ShipCountry]='Germany' OR [ShipCountry]='UK' OR [ShipCountry]='Brazil';
@@ -469,25 +470,25 @@ FROM [dbo].[Orders]
 WHERE [ShipCountry] IN ('Germany','UK', 'Brazil');
 ```
 --b,  Đơn hàng được giao đến các quốc gia khác Germany, UK, Brazil
-```
+```sh
 SELECT *
 FROM [dbo].[Orders]
 WHERE [ShipCountry] NOT IN ('Germany','UK', 'Brazil');
 ```
 * Lấy ra các sản phẩm có mã thể loại khác với 2, 3 và 4.
-```
+```sh
 SELECT *
 FROM  [dbo].[Products]
 WHERE [CategoryID] NOT IN (2,3,4);
 ```
 * Hãy liệt kê các nhân viên không phải là nữ từ bảng nhân viên.
-```
+```sh
 SELECT *
 FROM  [dbo].[Employees]
 WHERE [TitleOfCourtesy] NOT IN ('Ms.', 'Mrs.');
 ```
 * Hãy liệt kê các nhân viên là nữ từ bảng nhân viên.
-```
+```sh
 SELECT *
 FROM  [dbo].[Employees]
 WHERE [TitleOfCourtesy] IN ('Ms.', 'Mrs.');
@@ -499,7 +500,7 @@ WHERE [TitleOfCourtesy] IN ('Ms.', 'Mrs.');
 <div style="margin-left: 2em;">
 
 * Lấy ra tất cả các đơn hàng chưa được giao hàng. (ShippedDate => NULL)
-```
+```sh
 SELECT *
 FROM [dbo].[Orders]
 WHERE [ShippedDate] IS NULL;
@@ -509,13 +510,13 @@ FROM [dbo].[Orders]
 WHERE [ShippedDate] IS NULL;
 ```
 * Lấy danh sách các khách hàng có khu vực (Region) không bị NULL.
-```
+```sh
 SELECT *
 FROM [dbo].[Customers]
 WHERE [Region] IS NOT NULL;
 ```
 * Lấy danh sách các khách hàng không có tên công ty (CompanyName).
-```
+```sh
 SELECT *
 FROM [dbo].[Customers]
 WHERE [CompanyName] IS NULL;
@@ -527,25 +528,25 @@ WHERE [CompanyName] IS NULL;
 <div style="margin-left: 2em;">
 
 * Hãy cho biết mỗi khách hàng đã đặt bao nhiêu đơn hàng?
-```
+```sh
 SELECT [CustomerID], COUNT([OrderID]) AS [TotalOrders]
 FROM [dbo].[Orders]
 GROUP BY [CustomerID];
 ```
 * Hãy tính giá trị đơn giá trung bình theo mỗi nhà cung cấp sản phẩm.
-```
+```sh
 SELECT [SupplierID], AVG([UnitPrice]) AS [AvgUnitPrice]
 FROM [dbo].[Products]
 GROUP BY [SupplierID];
 ```
 * Hãy cho biết mỗi thể loại có tổng số bao nhiêu sản phẩm trong kho (UnitsOnStock)?
-```
+```sh
 SELECT [CategoryID], SUM([UnitsInStock]) AS [TotalUnitsInStock]
 FROM [dbo].[Products]
 GROUP BY [CategoryID];
 ```
 * Hãy cho biết giá vận chuyển thấp nhất và lớn nhất của các đơn hàng theo từng thành phố và quốc gia khác nhau.
-```
+```sh
 SELECT [ShipCountry], [ShipCity], 
 		MIN([Freight]) AS [MinFreight],
 		MAX([Freight]) AS [MaxFreight]
@@ -560,7 +561,7 @@ ORDER BY [ShipCountry] ASC, [ShipCity] ASC;
 <div style="margin-left: 2em;">
 
 * Tính số lượng đơn đặt hàng trong năm 1997 của từng khách hàng?
-```
+```sh
 SELECT [CustomerID], 
 	COUNT([OrderID]) as [TotalOrders],
 	YEAR([OrderDate]) as [Year]
@@ -569,13 +570,13 @@ WHERE YEAR([OrderDate])=1997
 GROUP BY [CustomerID], YEAR([OrderDate]);
 ```
 * Hãy lọc ra các đơn hang được đặt hàng vào tháng 5 năm 1997.
-```
+```sh
 SELECT *
 FROM [dbo].[Orders]
 WHERE MONTH([OrderDate])=5 AND YEAR([OrderDate])=1997;
 ```
 * Lấy danh sách các đơn hàng được đặt vào ngày 4 tháng 9 năm 1996.
-```
+```sh
 SELECT *
 FROM [dbo].[Orders]
 WHERE DAY([OrderDate])=4 AND MONTH([OrderDate])=9 AND YEAR([OrderDate])=1996;
@@ -585,7 +586,7 @@ FROM [dbo].[Orders]
 WHERE [OrderDate]='1996-08-04';
 ```
 * Lấy danh sách khách hàng đặt hàng trong năm 1998 và số đơn hàng mỗi tháng, sắp xếp tháng tăng dần.
-```
+```sh
 SELECT [CustomerID], MONTH([OrderDate]) as [Month], COUNT(*) AS [TotalOrders]
 FROM [dbo].[Orders]
 WHERE  YEAR([OrderDate])=1998
@@ -599,7 +600,7 @@ ORDER BY MONTH([OrderDate]) ASC;
 <div style="margin-left: 2em;">
 
 * Hãy cho biết những khách hàng nào đã đặt nhiều hơn 20 đơn hàng, sắp xếp theo thứ tự tổng số đơn hàng giảm dần.
-```
+```sh
 SELECT [CustomerID], COUNT([OrderID]) AS [TotalOrders]
 FROM [dbo].[Orders]
 GROUP BY [CustomerID]
@@ -607,7 +608,7 @@ HAVING COUNT([OrderID])>20
 ORDER BY COUNT([OrderID]) DESC;
 ```
 * Hãy lọc ra những nhà cung cấp sản phẩm có tổng số lượng hàng trong kho (UnitsInStock) lớn hơn 30, và có trung bình, đơn giá (UnitPrice) có giá trị dưới 50.
-```
+```sh
 SELECT	[SupplierID], 
 		SUM([UnitsInStock]) AS [TotalUnitsInStock],
 		AVG([UnitPrice]) AS [AvgUnitPrice]
@@ -616,7 +617,7 @@ GROUP BY [SupplierID]
 HAVING SUM([UnitsInStock])>30 AND AVG([UnitPrice]) <50;
 ```
 * Hãy cho biết tổng số tiền vận chuyển của từng tháng, trong nửa năm sau của năm 1996, sắp xếp theo tháng tăng dần.
-```
+```sh
 SELECT MONTH([ShippedDate]) AS [Month], SUM([Freight]) AS [TotalFreight]
 FROM [dbo].[Orders]
 WHERE [ShippedDate] BETWEEN '1996-07-01' AND '1996-12-31'
@@ -625,7 +626,7 @@ GROUP BY MONTH([ShippedDate])
 ORDER BY MONTH([ShippedDate]) ASC;
 ```
 * Hãy cho biết tổng số tiền vận chuyển của từng tháng, trong nửa năm sau của năm 1996, sắp xếp theo tháng tăng dần. Tong tien van chuyen lon hon 1000$
-```
+```sh
 SELECT MONTH([ShippedDate]) AS [Month], SUM([Freight]) AS [TotalFreight]
 FROM [dbo].[Orders]
 WHERE [ShippedDate] BETWEEN '1996-07-01' AND '1996-12-31'
@@ -644,7 +645,7 @@ ORDER BY MONTH([ShippedDate]) ASC;
 --Tên thể loại
 --Mã sản phẩm
 --Tên sản phẩm
-```
+```sh
 SELECT c.CategoryID, c.CategoryName, p.ProductID, p.ProductName
 FROM [dbo].[Products] AS p, [dbo].[Categories] AS c
 WHERE c.CategoryID = p.CategoryID;
@@ -653,7 +654,7 @@ WHERE c.CategoryID = p.CategoryID;
 --Mã nhân viên
 --Tên nhân viên
 --Số lượng đơn hàng mà nhân viên đã bán được
-```
+```sh
 SELECT o.[EmployeeID], e.LastName, e.FirstName, COUNT(o.[OrderID]) AS [TotalOrders]
 FROM [dbo].[Orders] AS o, [dbo].[Employees] AS e
 WHERE o.[EmployeeID] = e.EmployeeID
@@ -665,7 +666,7 @@ GROUP BY o.[EmployeeID], e.LastName, e.FirstName;
 --Tên liên hệ
 --Số lượng đơn hàng đã mua
 --Với điều kiện: quốc gia của khách hàng là UK
-```
+```sh
 SELECT c.CustomerID, c.CompanyName, c.ContactName, COUNT(o.[OrderID]) AS [TotalOrders]
 FROM [dbo].[Customers] AS c, [dbo].[Orders] AS o
 WHERE c.CustomerID = o.CustomerID
@@ -676,7 +677,7 @@ GROUP BY c.CustomerID, c.CompanyName, c.ContactName;
 --Tên công ty vận chuyển
 --Tổng số tiền được vận chuyển (Sum Frieght)
 --Và in ra màn hình theo thứ tự sắp xếp tổng số tiền vận chuyển giảm dần.
-```
+```sh
 SELECT s.ShipperID, s.CompanyName, SUM(o.Freight) AS [TotalFreight]
 FROM [dbo].[Shippers] AS s, [dbo].[Orders] AS o
 WHERE s.ShipperID = o.ShipVia
@@ -688,7 +689,7 @@ ORDER BY SUM(o.Freight) DESC;
 --Tên công ty
 --Tổng số các sản phẩm khác nhau đã cung cấp
 --Và chỉ in ra màn hình duy nhất 1 nhà cung cấp có số lượng sản phẩm khác nhau nhiều nhất.
-```
+```sh
 SELECT TOP 1 s.SupplierID, s.CompanyName, COUNT(p.ProductID) AS [TotalProducts]  -- Ctrl + Space
 FROM [dbo].[Suppliers] AS s, [dbo].[Products] AS p
 WHERE s.SupplierID = p.SupplierID
@@ -698,7 +699,7 @@ ORDER BY COUNT(p.ProductID)  DESC;
 * Từ bảng Orders và Orders Details, hãy in ra các thông tin sau đây:
 --Mã đơn hàng
 --Tổng số tiền sản phẩm của đơn hàng đó
-```
+```sh
 SELECT o.[OrderID], o.CustomerID, SUM(od.UnitPrice*od.Quantity) AS [Total]
 FROM [dbo].[Orders] AS o, [dbo].[Order Details] as od
 WHERE o.OrderID = od.OrderID
@@ -708,7 +709,7 @@ GROUP BY  o.[OrderID], o.CustomerID;
 --Mã đơn hàng
 --Tên nhân viên
 --Tổng số tiền sản phẩm của đơn hàng
-```
+```sh
 SELECT o.OrderID, e.LastName, e.FirstName, SUM(od.UnitPrice*od.Quantity) AS [Total]
 FROM [dbo].[Orders] AS o, [dbo].[Employees] AS e, [dbo].[Order Details] AS od
 WHERE o.EmployeeID = e.EmployeeID AND o.OrderID=od.OrderID
@@ -721,21 +722,21 @@ GROUP BY o.OrderID, e.LastName, e.FirstName;
 <div style="margin-left: 2em;">
 
 * Từ bảng Order Details hãy liệt kê các đơn đặt hàng có Unit Price nằm trong phạm vi từ 100 đến 200.
-```
+```sh
 -- I - 22
 SELECT od.OrderID
 FROM [dbo].[Order Details] od
 WHERE od.UnitPrice BETWEEN 100 AND 200;
 ```
 * Đưa ra các đơn đặt hàng có Quantity bằng 10 hoặc 20
-```
+```sh
 -- II - 433
 SELECT od.*
 FROM [dbo].[Order Details] od
 WHERE od.Quantity IN (10, 20);
 ```
 * Từ bảng Order Details hãy liệt kê các đơn đặt hàng có Unit Price nằm trong phạm vi từ 100 đến 200 VÀ đơn hàng phải có Quantity bằng 10 hoặc 20
-```
+```sh
 --- III = I AND II = 7 rows
 SELECT od.OrderID
 FROM [dbo].[Order Details] od
@@ -743,7 +744,7 @@ WHERE (od.UnitPrice BETWEEN 100 AND 200)
 		AND (od.Quantity IN (10, 20));
 ```
 * Từ bảng Order Details hãy liệt kê các đơn đặt hàng có Unit Price nằm trong phạm vi từ 100 đến 200 HOAC đơn hàng phải có Quantity bằng 10 hoặc 20
-```
+```sh
 --- IV = I OR II = 448 rows
 SELECT od.OrderID
 FROM [dbo].[Order Details] od
@@ -751,14 +752,14 @@ WHERE (od.UnitPrice BETWEEN 100 AND 200)
 		OR (od.Quantity IN (10, 20));
 ```
 * Từ bảng Order Details hãy liệt kê các đơn đặt hàng có Unit Price nằm trong phạm vi từ 100 đến 200 HOAC đơn hàng phải có Quantity bằng 10 hoặc 20, DISTINCT
-```
+```sh
 --- V = IV + DISTINCT = 360
 SELECT DISTINCT od.OrderID
 FROM [dbo].[Order Details] od
 WHERE (od.UnitPrice BETWEEN 100 AND 200)
 		OR (od.Quantity IN (10, 20));
 ```
-```
+```sh
 -- UNION
 -- V = I OR II = 360 rows
 SELECT od.OrderID FROM [dbo].[Order Details] od WHERE od.UnitPrice BETWEEN 100 AND 200
@@ -767,13 +768,13 @@ SELECT od.OrderID FROM [dbo].[Order Details] od WHERE od.Quantity IN (10, 20);
 ```
 
 -- IV (ko co distinct) = I OR II = 455 rows = 448 + 7 = 455 rows
-```
+```sh
 SELECT od.OrderID FROM [dbo].[Order Details] od WHERE od.UnitPrice BETWEEN 100 AND 200
 UNION ALL
 SELECT od.OrderID FROM [dbo].[Order Details] od WHERE od.Quantity IN (10, 20);
 ```
 -- Lay tat ca quoc gia tu 2 table Suppliers va Customers
-```
+```sh
 SELECT DISTINCT country
 FROM Suppliers;
 
@@ -803,7 +804,7 @@ FROM Customers;
 --Tên thể loại
 --Mã sản phẩm
 --Tên sản phẩm
-```
+```sh
 SELECT c.CategoryID, c.CategoryName, p.ProductID, p.ProductName
 FROM [dbo].[Categories] c
 INNER JOIN [dbo].[Products] p
@@ -813,7 +814,7 @@ ON c.CategoryID = p.CategoryID;
 --Mã thể loại
 --Tên thể loại
 --Số lượng sản phẩm
-```
+```sh
 SELECT c.CategoryID, c.CategoryName, COUNT(p.ProductID)
 FROM [dbo].[Categories] c
 INNER JOIN [dbo].[Products] p
@@ -823,7 +824,7 @@ GROUP BY c.CategoryID, c.CategoryName;
 * Sử dụng INNET JOIN, hãy in ra các thông tin sau đây:
 --Mã đơn hàng
 --Tên công ty khách hàng
-```
+```sh
 SELECT o.OrderID, c.CompanyName
 FROM [dbo].[Orders] o
 INNER JOIN [dbo].[Customers] c
@@ -833,7 +834,7 @@ ON o.CustomerID = c.CustomerID;
 --Mã thể loại
 --Tên thể loại
 --Tên sản phẩm
-```
+```sh
 SELECT c.CategoryID, c.CategoryName, p.ProductID, p.ProductName
 FROM [dbo].[Categories] c
 INNER JOIN [dbo].[Products] p
@@ -859,7 +860,7 @@ GROUP BY c.CategoryID, c.CategoryName;
 * Sử dụng RIGHT JOIN, hãy in ra các thông tin sau đây:
 --Mã đơn hàng
 --Tên công ty khách hàng
-```
+```sh
 SELECT o.OrderID, c.CompanyName
 FROM [dbo].[Orders] o
 INNER JOIN [dbo].[Customers] c
@@ -888,7 +889,7 @@ GROUP BY c.CompanyName;
 --Tên thể loại
 --Mã sản phẩm
 --Tên sản phẩm
-```
+```sh
 SELECT c.CategoryID, c.CategoryName, p.ProductID, p.ProductName
 FROM [dbo].[Categories] c
 FULL JOIN [dbo].[Products] p
@@ -901,17 +902,17 @@ ON c.CategoryID = p.CategoryID;
 <div style="margin-left: 2em;">
 
 * Liet ke ra toan bo san pham
-```
+```sh
 SELECT  [ProductID], [ProductName], [UnitPrice]
 FROM [dbo].[Products];
 ```
 * Tim gia trung binh cua cac san pham
-```
+```sh
 SELECT AVG([UnitPrice])
 FROM [dbo].[Products];
 ```
 * Loc nhung san pham co gia > gia trung binh
-```
+```sh
 SELECT  [ProductID], [ProductName], [UnitPrice]
 FROM [dbo].[Products]
 WHERE [UnitPrice] > 28.4962;
@@ -925,7 +926,7 @@ WHERE [UnitPrice] > (
 );
 ```
 * Loc ra nhung khach hang co so don hang > 10
-```
+```sh
 SELECT c.CustomerID, c.CompanyName, count(o.OrderId) as [TotalOrders]
 FROM [dbo].[Customers] c
 LEFT JOIN [dbo].[Orders] o
@@ -944,7 +945,7 @@ WHERE [CustomerID] IN (
 );
 ```
 * Tinh tong tien cho tung don hang
-```
+```sh
 SELECT o.*, (
 		SELECT SUM(od.Quantity*od.UnitPrice)
 		FROM [dbo].[Order Details] od
@@ -953,7 +954,7 @@ SELECT o.*, (
 FROM [dbo].[Orders] o;
 ```
 * Loc ra ten san pham va tong so don hang cua san pham
-```
+```sh
 SELECT ProductName, TotalOrders
 FROM 
 	(SELECT p.ProductID, p.ProductName, (
@@ -969,7 +970,7 @@ FROM
     <li><a id="sql-statement-execution-order">SQL statement execution order</a>
 <div style="margin-left: 2em;">
 
-```
+```sh
 SELECT p.ProductID, p.ProductName --2
 FROM [dbo].[Products] p; --1
 
@@ -1010,7 +1011,7 @@ ORDER BY [TotalProducts] ASC; --6 [TotalProducts] da ton tai
 <div style="margin-left: 2em;">
 
 * Ví dụ
-```
+```sh
 WITH bangTamThoi AS (
 	SELECT [EmployeeID], [LastName], [FirstName]
 	FROM [dbo].[Employees]
@@ -1023,7 +1024,7 @@ SELECT *
 FROM bangTamThoi;
 ```
 * Lấy thông tin về các sản phẩm (Products) có cùng thể loại với một sản phẩm cụ thể
-```
+```sh
 WITH ProductCategory AS(
 	SELECT [ProductName],[CategoryID]
 	FROM [dbo].[Products]
@@ -1051,7 +1052,7 @@ JOIN OrderTotals ot ON od.OrderID=ot.OrderID;
     <li><a id="recursive-query">Recursive query</a>
 <div style="margin-left: 2em;">
 
-```
+```sh
 -- fibo
 WITH fibo(prev_n, n) AS (
 	-- khoi tao
@@ -1089,7 +1090,7 @@ SELECT * FROM giaiThua
 OPTION (MAXRECURSION 5);
 ```
 * Sử dụng truy vấn đệ quy để tạo một cây cấu trúc quản lý của nhân viên trong bảng "Employees“. Trong đó “ReportsTo” chí là mã của người quản lý.
-```
+```sh
 declare @EmployeeId int
 set @EmployeeId=2;
 
@@ -1122,7 +1123,7 @@ OPTION (MAXRECURSION 500);
 <div style="margin-left: 2em;">
 
 * Xep hang san pham theo gia giam dan tren toan bo table
-```
+```sh
 SELECT
 	[ProductID],
 	[ProductName],
@@ -1132,7 +1133,7 @@ SELECT
 FROM [dbo].[Products]
 ```
 * Xep hang san pham theo gia giam dan tren the loai
-```
+```sh
 SELECT
 	[ProductID],
 	[ProductName],
@@ -1142,7 +1143,7 @@ SELECT
 FROM [dbo].[Products]
 ```
 * Vi du 3
-```
+```sh
 -- Tạo bảng "sinh_vien"
 CREATE TABLE [sinh_vien] (
     [ma_sinh_vien] INT PRIMARY KEY,
@@ -1152,7 +1153,7 @@ CREATE TABLE [sinh_vien] (
 );
 ```
 * Chèn 20 dòng dữ liệu thực tế vào bảng
-```
+```sh
 -- Tạo bảng "sinh_vien"
 CREATE TABLE [sinh_vien] (
     [ma_sinh_vien] INT PRIMARY KEY,
@@ -1162,7 +1163,7 @@ CREATE TABLE [sinh_vien] (
 );
 ```
 * Chèn 20 dòng dữ liệu thực tế vào bảng
-```
+```sh
 INSERT INTO [sinh_vien] ([ma_sinh_vien], [ho_ten], [diem_trung_binh], [ma_lop_hoc])
 VALUES
     (1, N'Nguyễn Văn A', 3.75, 101),
@@ -1187,7 +1188,7 @@ VALUES
     (20, N'Nguyễn Thị V', 3.67, 101);
 ```
 * Xếp hạng sinh viên toàn trường dựa trên điểm tb giảm dần
-```
+```sh
 SELECT 
 	[ma_sinh_vien],
 	[ho_ten], 
@@ -1197,7 +1198,7 @@ SELECT
 FROM [dbo].[sinh_vien]
 ```
 * Xếp hạng sinh viên theo từng lớp học dựa trên điểm tb giảm dần
-```
+```sh
 SELECT
   [ma_sinh_vien],
   [ho_ten],
@@ -1207,7 +1208,7 @@ SELECT
 FROM [dbo].[sinh_vien]
 ```
 * Xếp hạng sinh viên theo từng lớp học dựa trên điểm tb giảm dần, không nhảy hạng
-```
+```sh
 SELECT
   [ma_sinh_vien],
   [ho_ten],
@@ -1217,7 +1218,7 @@ SELECT
 FROM [dbo].[sinh_vien]
 ```
 * Xếp hạng sinh viên theo từng lớp học dựa trên điểm tb giảm dần, không bị trùng hạng
-```
+```sh
 SELECT
   [ma_sinh_vien],
   [ho_ten],
@@ -1227,7 +1228,7 @@ SELECT
 FROM [dbo].[sinh_vien]
 ```
 * Chúng ta sẽ sử dụng hàm LAG() lấy thông tin về đơn đặt hàng và ngày đặt hàng của đơn đặt hàng trước đó cho mỗi khách hàng.
-```
+```sh
 SELECT
 	[CustomerID],
 	[OrderID],
@@ -1242,7 +1243,7 @@ ORDER BY [CustomerID], [OrderDate];
     <li><a id="create-database">Create Database</a>
 <div style="margin-left: 2em;">
 
-```
+```sh
 CREATE DATABASE NVDB
 ON
 (	NAME = 'nvdb_data',
@@ -1263,7 +1264,7 @@ LOG ON
     <li><a id="create-table">Create Table</a>
 <div style="margin-left: 2em;">
 
-```
+```sh
 CREATE TABLE [nhanvien](
 	MaNV INT NOT NULL PRIMARY KEY,
 	HoTen VARCHAR(50) NOT NULL,
@@ -1275,7 +1276,7 @@ CREATE TABLE [nhanvien](
 ```
 
 * Tao Table khach hang
-```
+```sh
 CREATE TABLE KhachHang(
 	MaKH INT IDENTITY(100, 5) NOT NULL PRIMARY KEY,
 	TenKH VARCHAR(50) NOT NULL,
@@ -1292,7 +1293,7 @@ CREATE TABLE KhachHang_1(
 ```
 
 * Thay doi
-```
+```sh
 ALTER TABLE nhanvien
 ADD Email VARCHAR(100);
 
@@ -1304,7 +1305,7 @@ ADD CONSTRAINT NgaySinhCheck CHECK (NgaySinh < GETDATE());
 ```
 
 * TRUNCATE va DROP
-```
+```sh
 TRUNCATE TABLE KhachHang_1;
 
 DROP TABLE KhachHang_1;
@@ -1316,17 +1317,17 @@ DROP TABLE KhachHang_1;
 <div style="margin-left: 2em;">
 
 * Thêm một khách hàng mới
-```
+```sh
 INSERT INTO [dbo].[Customers]([CustomerID], [CompanyName], [ContactName], [Phone])
 VALUES ('KH123', 'TITV.VN', 'Le Nhat Tung', '0123456789');
 ```
 * Thêm một khách hàng mới đầy đủ các cột
-```
+```sh
 INSERT INTO [dbo].[Customers]
 VALUES ('KH456', 'TITV.VN', 'Le Nhat Tung', '0123456789', '-', null, null, null, null, null, null);
 ```
 * Thêm nhiều khách hàng mới cùng lúc
-```
+```sh
 INSERT INTO [dbo].[Customers]([CustomerID], [CompanyName], [ContactName], [Phone])
 VALUES 
 ('KH124', 'TITV.VN', 'Le Nhat Tung', '0123456789'),
@@ -1335,7 +1336,7 @@ VALUES
 ('KH127', 'TITV.VN', 'Le Nhat Tung', '0123456789');
 ```
 * Thêm một sản phẩm mới
-```
+```sh
 INSERT INTO Products (ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock) 
 VALUES ('New Product', 1, 2, '24 bottles', 10.99, 100);
 ```
@@ -1346,14 +1347,14 @@ VALUES ('New Product', 1, 2, '24 bottles', 10.99, 100);
 <div style="margin-left: 2em;">
 
 * Tạo ra bảng mới với các sản phẩm có giá >50;
-```
+```sh
 SELECT *
 INTO HighValueProducts
 FROM Products
 WHERE [UnitPrice]>50;
 ```
 * Tạo ra bảng mới với các đơn hàng được giao đến USA
-```
+```sh
 SELECT *
 INTO USAOrders
 FROM [dbo].[Orders]
@@ -1365,7 +1366,7 @@ WHERE [ShipCountry] LIKE 'USA';
     <li><a id="delete">DELETE</a>
 <div style="margin-left: 2em;">
 
-```
+```sh
 SELECT *
 INTO Customers_1
 FROM Customers;
@@ -1393,7 +1394,7 @@ DELETE FROM [dbo].[Customers_1];
     <li><a id="update">UPDATE</a>
 <div style="margin-left: 2em;">
 
-```
+```sh
 SELECT *
 INTO Customers_1
 FROM Customers;
@@ -1434,7 +1435,7 @@ WHERE [ProductID]=7;
     <li><a id="create-index">Create Index</a>
 <div style="margin-left: 2em;">
 
-```
+```sh
 SELECT COUNT(*)
 FROM [Sales].[SalesOrderDetail];
 
@@ -1476,7 +1477,7 @@ GROUP BY YEAR([OrderDate]), MONTH([OrderDate]);
 <div style="margin-left: 2em;">
 
 * Tạo một stored procedure để lấy thông tin về sản phẩm dựa trên tên sản phẩm được cung cấp.
-```
+```sh
 CREATE PROCEDURE GetProductByName
 	@ProductName NVARCHAR(100)
 AS
@@ -1491,7 +1492,7 @@ EXEC GetProductByName @ProductName='Chang';
 EXEC GetProductByName @ProductName='Ikura';
 ```
 * Tạo một stored procedure để tính tổng doanh số bán hàng của một nhân viên dựa trên EmployeeID.
-```
+```sh
 CREATE PROCEDURE GetEmployeeSalesTotal
 	@EmployeeId INT
 AS
@@ -1508,7 +1509,7 @@ EXEC GetEmployeeSalesTotal @EmployeeId=2;
 EXEC GetEmployeeSalesTotal @EmployeeId=3;
 ```
 * Tạo một stored procedure để thêm mới khách hàng vào bảng Customers.
-```
+```sh
 CREATE PROCEDURE AddCustomer
 	@CustomerID NVARCHAR(5),
 	@CompanyName NVARCHAR(40),
@@ -1525,7 +1526,7 @@ EXEC AddCustomer @CustomerID='NEWN', @CompanyName='titv.vn', @ContactName='Tung 
 
 * Tạo một stored procedure để cập nhật giá của t?t
 -- cho một sản phẩm c? th?
-```
+```sh
 CREATE PROCEDURE IncreasePrice
 	@ProductId INT,
 	@PriceIncrease DECIMAL(10,2)
@@ -1545,7 +1546,7 @@ EXEC IncreasePrice @ProductId=1, @PriceIncrease=100;
 <div style="margin-left: 2em;">
 
 * Trigger khi insert sẽ chuyển productName về viết hoa toàn bộ:
-```
+```sh
 CREATE TRIGGER MakeProductNameUpperCase
 ON [dbo].[Products]
 AFTER INSERT
@@ -1561,7 +1562,7 @@ INSERT [dbo].[Products]([ProductName], [SupplierID], [CategoryID])
 VALUES ('test name', 1, 1)
 ```
 * Viết một trigger trong cơ sở dữ liệu Northwind để đảm bảo rằng mỗi khi có một chi tiết đơn hàng mới được thêm vào, số lượng tồn kho phải được giảm đi
-```
+```sh
 CREATE TRIGGER UpdateProductInventory
 ON [dbo].[Order Details]
 AFTER INSERT
