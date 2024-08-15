@@ -4,6 +4,12 @@
     <h3 align="center">SQL SERVER BASIC</h3>
 </div>
 
+<!-- DATABASE -->
+### DATABASE
+
+_Northwind Database_    [>>See more](https://docs.yugabyte.com/preview/sample-data/northwind/)
+
+
 <div>
     <a href="#" target="_blank"><img src="northwind/northwind.png" width="1200" alt="Northwind database" /></a>
 </div>
@@ -56,13 +62,6 @@
     <li><a href="#trigger">Trigger</a></li>
   </ol>
 </details>
-
-
-
-<!-- DATABASE -->
-### DATABASE
-
-_Northwind Database_    [>>See more](https://docs.yugabyte.com/preview/sample-data/northwind/)
 
 
 
@@ -197,13 +196,73 @@ FROM [dbo].[Products];
     <li><a id="count-sum-avg">Count-Sum-AVG</a>
 <div style="margin-left: 2em;">
 
+* Hãy đếm số lượng khách hàng có trong bảng (Customers).
+```
+SELECT COUNT(*) AS [NumberOfCustomers]
+FROM [dbo].[Customers];
 
+SELECT COUNT([CustomerID]) AS [NumberOfCustomers]
+FROM [dbo].[Customers];
+```
+* Tính tổng số tiền vận chuyển (Freight) của tất cả các đơn đặt hàng.
+```
+SELECT SUM([Freight]) AS [SumFreight]
+FROM [dbo].[Orders];
+```
+* Tính trung bình số lượng đặt hàng (Quantity) của tất cả các sản phẩm trong bảng [Order Details]
+```
+SELECT AVG([Quantity]) AS [AvgQuantity]
+FROM [dbo].[Order Details];
+```
+* Đếm số lượng, tính tổng số lượng hàng trong kho và trung bình giá của các sản phẩm có trong bảng Product.
+```
+SELECT	COUNT(*) AS [NumberOfProducts], 
+		SUM([UnitsInStock]) AS [TotalUnitsInStock], 
+		AVG([UnitPrice]) AS [AvgUnitPrice]
+FROM [dbo].[Products];
+```
 </div>
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="order-by">ORDER BY</a>
 <div style="margin-left: 2em;">
 
+* Bạn hãy liệt kê tất cả các nhà cung cấp theo thứ tự tên đơn vị CompanyName Từ A-Z
+```
+SELECT *
+FROM [dbo].[Suppliers]
+ORDER BY [CompanyName] ASC; -- ascending
+
+SELECT *
+FROM [dbo].[Suppliers]
+ORDER BY [CompanyName];
+```
+* Bạn hãy liệt kê tất cả các sản phẩm theo thứ tự giá giảm dần.
+```
+SELECT *
+FROM [dbo].[Products]
+ORDER BY [UnitPrice] DESC; -- descending
+```
+* Bạn hãy liệt kê tất cả các nhân viên theo thứ tự họ và tên đệm A-Z. Không dùng ASC | DESC
+```
+SELECT *
+FROM [dbo].[Employees]
+ORDER BY [LastName] ASC, [FirstName] ASC;
+
+SELECT *
+FROM [dbo].[Employees]
+ORDER BY [LastName], [FirstName];
+```
+* Hãy lấy ra một sản phẩm có số lượng bán cao nhất từ bảng [Order Details]. Không được dùng MAX.
+```
+SELECT *
+FROM [dbo].[Order Details]
+ORDER BY [Quantity] DESC;
+
+SELECT TOP 1 *
+FROM [dbo].[Order Details]
+ORDER BY [Quantity] DESC;
+```
 
 </div>
     </li>
@@ -211,42 +270,186 @@ FROM [dbo].[Products];
     <li><a id="math-operations">Math Operations</a>
 <div style="margin-left: 2em;">
 
+* Tính số lượng sản phẩm còn lại trong kho (UnitsInStock) sau khi bán hết các sản phẩm đã được đặt hàng (UnitsOnOrder). StockRemaining = UnitsInStock - UnitsOnOrder
+```
+SELECT	[ProductID], 
+		[ProductName], 
+		[UnitsInStock],
+		[UnitsOnOrder],
+		([UnitsInStock]-[UnitsOnOrder]) AS [StockRemaining]
+FROM [dbo].[Products];
+```
+* Tính giá trị đơn hàng chi tiết cho tất cả các sản phẩm trong bảng OrderDetails
+ OrderDetailValue = UnitPrice x Quantity
+```
+SELECT	*,
+		([UnitPrice]*[Quantity]) AS [OrderDetailValue]
+FROM [dbo].[Order Details];
+```
 
+* Tính tỷ lệ giá vận chuyển đơn đặt hàng (Freight) trung bình của các đơn hàng trong bảng Orders so với giá trị vận chuyển của đơn hàng lớn nhất (MaxFreight). FreightRatio = AVG(Freight)/ MAX(Freight) 
+```
+SELECT  AVG([Freight])/MAX([Freight]) AS [FreightRatio]
+FROM [dbo].[Orders]
+```
 </div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="where">Where</a>
 <div style="margin-left: 2em;">
 
+* Bạn hãy liệt kê tất cả các nhân viên đến từ thành phố London.
+```
+SELECT *
+FROM [dbo].[Employees]
+WHERE [City]='London';
+```
+* Bạn hãy liệt kê tất cả các nhân viên đến từ thành phố London. Sap xep ket qua theo LastName A->Z
+```
+SELECT *
+FROM [dbo].[Employees]
+WHERE [City]='London'
+ORDER BY [LastName] ASC;
+```
+* Bạn hãy liệt kê tất các đơn hàng bị giao muộn, biết rằng ngày cần phải giao hàng là RequiredDate, ngày giao hàng thực tế là ShippedDate.
+```
+SELECT [OrderID], [RequiredDate], [ShippedDate]
+FROM [dbo].[Orders]
+WHERE [ShippedDate]>[RequiredDate];
 
+
+SELECT COUNT(*) AS [So don giao hang muon]
+FROM [dbo].[Orders]
+WHERE [ShippedDate]>[RequiredDate];
+```
+* Lấy ra tất cả các đơn hàng chi tiết được giảm giá nhiều hơn 10%. (Discount > 0.1)
+```
+SELECT * 
+FROM [dbo].[Order Details]
+WHERE [Discount]>0.1;
+```
 </div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="and-or-not">And-Or-Not</a>
 <div style="margin-left: 2em;">
 
+* Bạn hãy liệt kê tất cả các sản phẩm có số lượng trong kho (UnitsInStock) nhỏ hơn 50 hoặc lớn hơn 100.
+```
+SELECT *
+FROM [dbo].[Products]
+WHERE [UnitsInStock]<50 OR [UnitsInStock]>100;
+```
+* Bạn hãy liệt kê tất các đơn hàng được giao đến Brazil, đã bị giao muộn, biết rằng ngày cần phải giao hàng là RequiredDate, ngày giao hàng thực tế là ShippedDate.
+```
+SELECT *
+FROM [dbo].[Orders]
+WHERE [ShipCountry]='Brazil' AND [RequiredDate]<[ShippedDate];
+```
+* Lấy ra tất cả các sản phẩm có giá dưới 100$ và mã thể loại khác 1. Lưu ý: dùng NOT
+```
+SELECT *
+FROM [dbo].[Products]
+WHERE [UnitPrice]>=100 OR [CategoryID]=1;
 
+SELECT *
+FROM [dbo].[Products]
+WHERE NOT([UnitPrice]>=100 OR [CategoryID]=1);
+```
 </div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="between">Between</a>
 <div style="margin-left: 2em;">
 
+* Lấy danh sách các sản phẩm có giá bán trong khoảng từ 10 đến 20 đô la.
+```
+SELECT *
+FROM [dbo].[Products]
+WHERE [UnitPrice] BETWEEN 10 AND 20;
 
+SELECT *
+FROM [dbo].[Products]
+WHERE [UnitPrice]>=10 AND [UnitPrice]<=20;
+```
+* Lấy danh sách các đơn đặt hàng được đặt trong khoảng thời gian từ ngày 1996-07-01 đến ngày 1996-07-31:
+```
+SELECT *
+FROM [dbo].[Orders]
+WHERE [OrderDate] BETWEEN '1996-07-01' AND '1996-07-31';
+```
+* Tính tổng số tiền vận chuyển (Freight) của các đơn đặt hàng được đặt trong khoảng thời gian từ ngày 1996-07-01 đến ngày 1996-07-31:
+```
+SELECT SUM([Freight]) AS [TotalJulyFreight]
+FROM [dbo].[Orders]
+WHERE [OrderDate] BETWEEN '1996-07-01' AND '1996-07-31';
+```
 </div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="like">LIKE</a>
 <div style="margin-left: 2em;">
 
+* Hãy lọc ra tất cả các khách hàng đến từ các quốc gia (Country) bắt đầu bằng chữ ‘A’
+```
+SELECT *
+FROM [dbo].[Customers]
+WHERE [Country] LIKE 'A%';
+```
+* Lấy danh sách các đơn đặt được gửi đến các thành phố có chứa chữ ‘a’.
 
+```SELECT *
+FROM [dbo].[Orders]
+WHERE [ShipCity] LIKE '%a%';
+```
+* Hãy lọc ra tất cả các đơn hàng với điều kiện:<br>
+    ShipCountry  LIKE ‘U_’<br>
+    ShipCountry LIKE ‘U%’
+```
+SELECT *
+FROM [dbo].[Orders]
+WHERE [ShipCountry] LIKE 'U_';
+
+SELECT *
+FROM [dbo].[Orders]
+WHERE [ShipCountry] LIKE 'U%';
+```
 </div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="wildcard">Wildcard</a>
 <div style="margin-left: 2em;">
 
-
+* Hãy lọc ra tất cả các khách hàng có tên liên hệ bắt đầu bằng chữ ‘A’
+```
+SELECT *
+FROM [dbo].[Customers]
+WHERE [ContactName] LIKE 'A%';
+```
+* Hãy lọc ra tất cả các khách hàng có tên liên hệ bắt đầu bằng chữ ‘H’, và có chữ thứ 2 là bất kỳ ký tự nào.
+```
+SELECT *
+FROM [dbo].[Customers]
+WHERE [ContactName] LIKE 'H_%';
+```
+* Hãy lọc ra tất cả các đơn hàng được gửi đến thành phố có chữ cái bắt đầu là L, chữ cái thứ hai là u hoặc o.
+```
+SELECT [OrderID], [ShipCity]
+FROM [dbo].[Orders]
+WHERE [ShipCity] LIKE 'L[u,o]%';
+```
+* Hãy lọc ra tất cả các đơn hàng được gửi đến thành phố có chữ cái bắt đầu là L, chữ cái thứ hai khong là u hoặc o.
+```
+SELECT [OrderID], [ShipCity]
+FROM [dbo].[Orders]
+WHERE [ShipCity] LIKE 'L[^u,o]%';
+```
+* Hãy lọc ra tất cả các đơn hang được gửi đến thành phố có chữ cái bắt đầu là L, chữ cái thứ hai là các ký tự từ a đến e.
+```
+SELECT [OrderID], [ShipCity]
+FROM [dbo].[Orders]
+WHERE [ShipCity] LIKE 'L[a-e]%';
+```
 </div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
