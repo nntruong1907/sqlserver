@@ -11,7 +11,7 @@ _Northwind Database_    [>>See more](https://docs.yugabyte.com/preview/sample-da
 
 
 <div>
-    <a href="" target="_blank"><img src="northwind/northwind.png" width="1200" alt="Northwind database" /></a>
+    <a target="_blank"><img src="northwind/northwind.png" width="1200" alt="Northwind database" /></a>
 </div>
 
 <!-- MAIN CONTENTS -->
@@ -423,7 +423,7 @@ WHERE [ShipCountry] LIKE 'U%';
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/wildcard.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/wildcard.png" width="1000" alt="" /></a>
 </div>
 
 * Hãy lọc ra tất cả các khách hàng có tên liên hệ bắt đầu bằng chữ ‘A’
@@ -805,16 +805,16 @@ FROM Customers;
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/inner-join.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/inner-join.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/left-join.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/left-join.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/right-join.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/right-join.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/full-join.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/full-join.png" width="1000" alt="" /></a>
 </div>
 
 * Sử dụng INNER JOIN. Từ bảng Products và Categories, hãy in ra các thông tin sau đây:
@@ -989,10 +989,10 @@ FROM
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/SQL-statement-execution-order-1.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/SQL-statement-execution-order-1.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/SQL-statement-execution-order-2.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/SQL-statement-execution-order-2.png" width="1000" alt="" /></a>
 </div>
 
 ```sh
@@ -1148,13 +1148,13 @@ OPTION (MAXRECURSION 500);
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/windows-functions-1.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/windows-functions-1.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/windows-functions-2.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/windows-functions-2.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/windows-functions-3.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/windows-functions-3.png" width="1000" alt="" /></a>
 </div>
 
 * Xep hang san pham theo gia giam dan tren toan bo table
@@ -1279,19 +1279,19 @@ ORDER BY [CustomerID], [OrderDate];
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/SQL-command-groups-1.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/SQL-command-groups-1.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/SQL-command-groups-2.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/SQL-command-groups-2.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/SQL-command-groups-3.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/SQL-command-groups-3.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/SQL-command-groups-4.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/SQL-command-groups-4.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/SQL-command-groups-5.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/SQL-command-groups-5.png" width="1000" alt="" /></a>
 </div>
 </div>    
     </li>
@@ -1369,7 +1369,7 @@ DROP TABLE KhachHang_1;
 </div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="insert">INSERT INTO</a>
+    <li><a id="insert-into">INSERT INTO</a>
 <div style="margin-left: 2em;">
 
 * Thêm một khách hàng mới
@@ -1403,7 +1403,7 @@ VALUES ('New Product', 1, 2, '24 bottles', 10.99, 100);
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/select-into.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/select-into.png" width="1000" alt="" /></a>
 </div>
 
 * Tạo ra bảng mới với các sản phẩm có giá >50;
@@ -1495,22 +1495,22 @@ WHERE [ProductID]=7;
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/index-1.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/index-1.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/index-2.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/index-2.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/index-3.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/index-3.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/index-4.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/index-4.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/index-5.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/index-5.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/index-6.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/index-6.png" width="1000" alt="" /></a>
 </div>
 
 ```sh
@@ -1539,25 +1539,25 @@ ON [Sales].[SalesOrderDetail] ([CarrierTrackingNumber]);
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/view-1.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/view-1.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/view-2.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/view-2.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/view-3.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/view-3.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/view-4.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/view-4.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/view-5.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/view-5.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/view-6.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/view-6.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/view-7.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/view-7.png" width="1000" alt="" /></a>
 </div>
 
 ```sh
@@ -1577,16 +1577,16 @@ GROUP BY YEAR([OrderDate]), MONTH([OrderDate]);
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/Stored-procedures-1.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/Stored-procedures-1.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/Stored-procedures-2.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/Stored-procedures-2.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/Stored-procedures-3.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/Stored-procedures-3.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/Stored-procedures-4.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/Stored-procedures-4.png" width="1000" alt="" /></a>
 </div>
 
 * Tạo một stored procedure để lấy thông tin về sản phẩm dựa trên tên sản phẩm được cung cấp.
@@ -1658,34 +1658,34 @@ EXEC IncreasePrice @ProductId=1, @PriceIncrease=100;
 <div style="margin-left: 2em;">
 
 <div>
-    <a href="" target="_blank"><img src="images/trigger-1.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-1.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/trigger-2.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-2.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/trigger-3.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-3.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/trigger-4.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-4.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/trigger-5.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-5.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/trigger-6.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-6.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/trigger-7.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-7.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/trigger-8.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-8.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/trigger-9.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-9.png" width="1000" alt="" /></a>
 </div>
 <div>
-    <a href="" target="_blank"><img src="images/trigger-10.png" width="1000" alt="" /></a>
+    <a target="_blank"><img src="images/trigger-10.png" width="1000" alt="" /></a>
 </div>
 
 * Trigger khi insert sẽ chuyển productName về viết hoa toàn bộ:
