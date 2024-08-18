@@ -50,6 +50,7 @@ _Northwind Database_    [>>See more](https://docs.yugabyte.com/preview/sample-da
     <li><a href="#common-table-expression">Common Table Expression</a></li>
     <li><a href="#recursive-query">Recursive query</a></li>
     <li><a href="#windows-functions">Windows Functions</a></li>
+    <li><a href="#sql-command-groups">SQL command groups</a></li>
     <li><a href="#create-database">Create Database</a></li>
     <li><a href="#create-table">Create Table</a></li>
     <li><a href="#insert">INSERT</a></li>
@@ -421,6 +422,10 @@ WHERE [ShipCountry] LIKE 'U%';
     <li><a id="wildcard">Wildcard</a>
 <div style="margin-left: 2em;">
 
+<div>
+    <a href="#" target="_blank"><img src="images/wildcard.png" width="1000" alt="" /></a>
+</div>
+
 * Hãy lọc ra tất cả các khách hàng có tên liên hệ bắt đầu bằng chữ ‘A’
 ```sh
 SELECT *
@@ -759,16 +764,16 @@ FROM [dbo].[Order Details] od
 WHERE (od.UnitPrice BETWEEN 100 AND 200)
 		OR (od.Quantity IN (10, 20));
 ```
+* UNION - có distinct
 ```sh
--- UNION
 -- V = I OR II = 360 rows
 SELECT od.OrderID FROM [dbo].[Order Details] od WHERE od.UnitPrice BETWEEN 100 AND 200
 UNION 
 SELECT od.OrderID FROM [dbo].[Order Details] od WHERE od.Quantity IN (10, 20);
 ```
-
--- IV (ko co distinct) = I OR II = 455 rows = 448 + 7 = 455 rows
+* UNION ALL - không có distinct
 ```sh
+-- IV (ko co distinct) = I OR II = 455 rows = 448 + 7 = 455 rows
 SELECT od.OrderID FROM [dbo].[Order Details] od WHERE od.UnitPrice BETWEEN 100 AND 200
 UNION ALL
 SELECT od.OrderID FROM [dbo].[Order Details] od WHERE od.Quantity IN (10, 20);
@@ -798,6 +803,19 @@ FROM Customers;
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="join">JOIN - LEFT JOIN - RIGHT JOIN - FULL JOIN</a>
 <div style="margin-left: 2em;">
+
+<div>
+    <a href="#" target="_blank"><img src="images/inner-join.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/left-join.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/right-join.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/full-join.png" width="1000" alt="" /></a>
+</div>
 
 * Sử dụng INNER JOIN. Từ bảng Products và Categories, hãy in ra các thông tin sau đây:
 --Mã thể loại
@@ -970,6 +988,13 @@ FROM
     <li><a id="sql-statement-execution-order">SQL statement execution order</a>
 <div style="margin-left: 2em;">
 
+<div>
+    <a href="#" target="_blank"><img src="images/SQL-statement-execution-order-1.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/SQL-statement-execution-order-2.png" width="1000" alt="" /></a>
+</div>
+
 ```sh
 SELECT p.ProductID, p.ProductName --2
 FROM [dbo].[Products] p; --1
@@ -1122,6 +1147,16 @@ OPTION (MAXRECURSION 500);
     <li><a id="windows-functions">Windows Functions</a>
 <div style="margin-left: 2em;">
 
+<div>
+    <a href="#" target="_blank"><img src="images/windows-functions-1.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/windows-functions-2.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/windows-functions-3.png" width="1000" alt="" /></a>
+</div>
+
 * Xep hang san pham theo gia giam dan tren toan bo table
 ```sh
 SELECT
@@ -1240,6 +1275,27 @@ ORDER BY [CustomerID], [OrderDate];
 </div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
+    <li><a id="sql-command-groups">SQL command groups</a>
+<div style="margin-left: 2em;">
+
+<div>
+    <a href="#" target="_blank"><img src="images/SQL-command-groups-1.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/SQL-command-groups-2.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/SQL-command-groups-3.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/SQL-command-groups-4.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/SQL-command-groups-5.png" width="1000" alt="" /></a>
+</div>
+</div>    
+    </li>
+    <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="create-database">Create Database</a>
 <div style="margin-left: 2em;">
 
@@ -1313,7 +1369,7 @@ DROP TABLE KhachHang_1;
 </div>    
     </li>
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
-    <li><a id="insert">INSERT</a>
+    <li><a id="insert">INSERT INTO</a>
 <div style="margin-left: 2em;">
 
 * Thêm một khách hàng mới
@@ -1345,6 +1401,10 @@ VALUES ('New Product', 1, 2, '24 bottles', 10.99, 100);
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="select-into">SELECT INTO</a>
 <div style="margin-left: 2em;">
+
+<div>
+    <a href="#" target="_blank"><img src="images/select-into.png" width="1000" alt="" /></a>
+</div>
 
 * Tạo ra bảng mới với các sản phẩm có giá >50;
 ```sh
@@ -1406,7 +1466,6 @@ UPDATE [dbo].[Customers_1]
 SET [Address]='New Address'
 WHERE [CustomerID]='ALFKI';
 
-
 -- 
 SELECT *
 INTO [dbo].[Products_1]
@@ -1435,6 +1494,25 @@ WHERE [ProductID]=7;
     <li><a id="create-index">Create Index</a>
 <div style="margin-left: 2em;">
 
+<div>
+    <a href="#" target="_blank"><img src="images/index-1.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/index-2.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/index-3.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/index-4.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/index-5.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/index-6.png" width="1000" alt="" /></a>
+</div>
+
 ```sh
 SELECT COUNT(*)
 FROM [Sales].[SalesOrderDetail];
@@ -1460,7 +1538,29 @@ ON [Sales].[SalesOrderDetail] ([CarrierTrackingNumber]);
     <li><a id="view">View</a>
 <div style="margin-left: 2em;">
 
-```
+<div>
+    <a href="#" target="_blank"><img src="images/view-1.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/view-2.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/view-3.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/view-4.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/view-5.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/view-6.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/view-7.png" width="1000" alt="" /></a>
+</div>
+
+```sh
 CREATE VIEW MothlySales AS
 SELECT 
   YEAR([OrderDate]) as "Năm",
@@ -1475,6 +1575,19 @@ GROUP BY YEAR([OrderDate]), MONTH([OrderDate]);
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="stored-procedures">Stored Procedures</a>
 <div style="margin-left: 2em;">
+
+<div>
+    <a href="#" target="_blank"><img src="images/Stored-procedures-1.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/Stored-procedures-2.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/Stored-procedures-3.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/Stored-procedures-4.png" width="1000" alt="" /></a>
+</div>
 
 * Tạo một stored procedure để lấy thông tin về sản phẩm dựa trên tên sản phẩm được cung cấp.
 ```sh
@@ -1524,8 +1637,7 @@ END
 EXEC AddCustomer @CustomerID='NEWN', @CompanyName='titv.vn', @ContactName='Tung Le',@ContactTitle='Mr.' 
 ```
 
-* Tạo một stored procedure để cập nhật giá của t?t
--- cho một sản phẩm c? th?
+* Tạo một stored procedure để cập nhật giá cho một sản phẩm cụ thể
 ```sh
 CREATE PROCEDURE IncreasePrice
 	@ProductId INT,
@@ -1544,6 +1656,37 @@ EXEC IncreasePrice @ProductId=1, @PriceIncrease=100;
     <p align="right">[<a href="#readme-top">back to top</a>]</p>
     <li><a id="trigger">Trigger</a>
 <div style="margin-left: 2em;">
+
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-1.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-2.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-3.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-4.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-5.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-6.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-7.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-8.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-9.png" width="1000" alt="" /></a>
+</div>
+<div>
+    <a href="#" target="_blank"><img src="images/trigger-10.png" width="1000" alt="" /></a>
+</div>
 
 * Trigger khi insert sẽ chuyển productName về viết hoa toàn bộ:
 ```sh
